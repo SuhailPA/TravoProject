@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C9FBFF"
+    android:textAlignment="center"
+    tools:context=".ui.fragments.registration.PropertyRegistration4">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:src="@drawable/small_logo_black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:text="Property Registration (4/6)"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <TextView
+        android:id="@+id/set_checkIn_checkout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="25dp"
+        android:padding="5dp"
+        android:text="Set CheckIn and CheckOut Time"
+        android:textColor="@color/purple_700"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Cancellation Policy"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/set_checkIn_checkout" />
+
+    <CheckBox
+        android:id="@+id/cancellation_policy1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Free Cancellation Upto 24 Hrs"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/set_checkIn_checkout"
+        app:layout_constraintStart_toStartOf="@+id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <CheckBox
+        android:id="@+id/cancellation_policy3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Free Cancellation Upto 72Hrs"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/cancellation_policy2"
+        app:layout_constraintStart_toStartOf="@+id/cancellation_policy2"
+        app:layout_constraintTop_toBottomOf="@+id/cancellation_policy2" />
+
+    <CheckBox
+        android:id="@+id/cancellation_policy2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Free Cancellation Upto 48 Hrs"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/cancellation_policy1"
+        app:layout_constraintStart_toStartOf="@+id/cancellation_policy1"
+        app:layout_constraintTop_toBottomOf="@+id/cancellation_policy1" />
+
+    <CheckBox
+        android:id="@+id/cancellation_policy4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="No Cancellation"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/cancellation_policy3"
+        app:layout_constraintStart_toStartOf="@+id/cancellation_policy3"
+        app:layout_constraintTop_toBottomOf="@+id/cancellation_policy3" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Acceptable Id-Proofs"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/cancellation_policy4"
+        app:layout_constraintTop_toBottomOf="@+id/cancellation_policy4" />
+
+    <CheckBox
+        android:id="@+id/idProof1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Adhaar Card"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/cancellation_policy4"
+        app:layout_constraintStart_toStartOf="@+id/textView16"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <CheckBox
+        android:id="@+id/idProof2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Identity Card"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/idProof1"
+        app:layout_constraintStart_toStartOf="@+id/idProof1"
+        app:layout_constraintTop_toBottomOf="@+id/idProof1" />
+
+    <CheckBox
+        android:id="@+id/idProof3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Driving Licence"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/idProof2"
+        app:layout_constraintStart_toStartOf="@+id/idProof2"
+        app:layout_constraintTop_toBottomOf="@+id/idProof2" />
+
+    <CheckBox
+        android:id="@+id/idProof4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Pan Card"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/idProof3"
+        app:layout_constraintStart_toStartOf="@+id/idProof3"
+        app:layout_constraintTop_toBottomOf="@+id/idProof3" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/property_next4"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="@color/white"
+        android:text="Next"
+        android:textColor="@color/black"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/idProof4"
+        app:layout_constraintStart_toStartOf="@+id/idProof4"
+        app:layout_constraintTop_toBottomOf="@+id/idProof4" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

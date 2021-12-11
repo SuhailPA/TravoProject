@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fillViewport="true">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#C9FBFF"
+        tools:context=".ui.fragments.registration.PropertyRegistration3">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:src="@drawable/small_logo_black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="15dp"
+            android:text="Property Registration (3/6)"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="15dp"
+            android:text="Amenities Offered"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <CheckBox
+            android:id="@+id/no_meals"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="Swimming Pool"
+            app:layout_constraintEnd_toStartOf="@+id/free_breakfast"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <CheckBox
+            android:id="@+id/free_breakfast"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="25dp"
+            android:text="A/C"
+            app:layout_constraintBaseline_toBaselineOf="@+id/no_meals"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/no_meals" />
+
+        <CheckBox
+            android:id="@+id/free_breakfast_and_dinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="Smoking Rooms"
+            app:layout_constraintEnd_toStartOf="@id/free_breakfast_and_lunch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/no_meals" />
+
+        <CheckBox
+            android:id="@+id/free_breakfast_and_lunch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="25dp"
+            android:text="Wifi"
+            app:layout_constraintBaseline_toBaselineOf="@+id/free_breakfast_and_dinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/free_breakfast_and_dinner" />
+
+        <CheckBox
+            android:id="@+id/full_meals"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:text="Lift"
+            app:layout_constraintEnd_toStartOf="@+id/parking"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/free_breakfast_and_dinner" />
+
+        <CheckBox
+            android:id="@+id/parking"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="25dp"
+            android:text="Parking"
+            app:layout_constraintBaseline_toBaselineOf="@+id/full_meals"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/full_meals" />
+
+        <CheckBox
+            android:id="@+id/restaurant"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:text="Restaurant"
+            app:layout_constraintEnd_toStartOf="@+id/gym"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/full_meals" />
+
+        <CheckBox
+            android:id="@+id/gym"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="25dp"
+            android:text="Gym"
+            app:layout_constraintBaseline_toBaselineOf="@+id/restaurant"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/restaurant" />
+
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Property Photos"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/restaurant" />
+
+        <ImageView
+            android:id="@+id/property_pic1"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintDimensionRatio="2:2"
+            app:layout_constraintEnd_toStartOf="@+id/property_pic2"
+            app:layout_constraintStart_toStartOf="@+id/restaurant"
+            app:layout_constraintTop_toBottomOf="@+id/textView13"
+            android:src="@drawable/small_logo_black" />
+
+        <ImageView
+            android:id="@+id/property_pic2"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintDimensionRatio="2:2"
+            app:layout_constraintEnd_toEndOf="@+id/gym"
+            app:layout_constraintStart_toEndOf="@+id/property_pic1"
+            app:layout_constraintTop_toBottomOf="@+id/textView13"
+            android:src="@drawable/small_logo_black"  />
+
+        <ImageView
+            android:id="@+id/property_pic3"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintDimensionRatio="2:2"
+            app:layout_constraintEnd_toStartOf="@+id/property_pic4"
+            app:layout_constraintStart_toStartOf="@+id/restaurant"
+            app:layout_constraintTop_toBottomOf="@+id/property_pic1"
+            android:src="@drawable/small_logo_black" />
+
+        <ImageView
+            android:id="@+id/property_pic4"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintDimensionRatio="2:2"
+            app:layout_constraintEnd_toEndOf="@+id/gym"
+            app:layout_constraintStart_toEndOf="@+id/property_pic3"
+            app:layout_constraintTop_toBottomOf="@+id/property_pic2"
+            android:src="@drawable/small_logo_black" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/property_next3"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:backgroundTint="@android:color/white"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:textColor="@color/black"
+            app:cornerRadius="15dp"
+            android:text="Next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/gym"
+            app:layout_constraintStart_toStartOf="@+id/restaurant"
+            app:layout_constraintTop_toBottomOf="@+id/property_pic3" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.suhail.travo.ui.fragments.LaunchFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_launch" >
+        <action
+            android:id="@+id/action_loginFragment_to_phoneSignUpScreen"
+            app:destination="@id/phoneSignUpScreen"
+            app:enterAnim="@anim/from_down"
+            app:exitAnim="@anim/to_up"
+            app:popEnterAnim="@anim/from_up"
+            app:popExitAnim="@anim/to_down" />
+    </fragment>
+    <fragment
+        android:id="@+id/phoneSignUpScreen"
+        android:name="com.suhail.travo.ui.fragments.registration.phone_signup_screen.PhoneSignUpScreen"
+        android:label="fragment_phone_sign_up_screen"
+        tools:layout="@layout/fragment_phone_sign_up_screen" >
+        <action
+            android:id="@+id/action_phoneSignUpScreen_to_otpScreenFragment"
+            app:destination="@id/otpScreenFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/otpScreenFragment"
+        android:name="com.suhail.travo.ui.fragments.registration.OtpScreenFragment"
+        android:label="fragment_otp_screen"
+        tools:layout="@layout/fragment_otp_screen" >
+        <action
+            android:id="@+id/action_otpScreenFragment_to_registrationScreenZero"
+            app:destination="@id/registrationScreenZero"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <action
+            android:id="@+id/action_otpScreenFragment_to_userRegistration"
+            app:destination="@id/userRegistration"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+        <argument
+            android:name="user"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/propertyRegistrationFirst"
+        android:name="com.suhail.travo.ui.fragments.registration.regitration_screen_one.PropertyRegistrationFirst"
+        android:label="fragment_property_registration_1"
+        tools:layout="@layout/fragment_property_registration_1" >
+        <action
+            android:id="@+id/action_propertyRegistrationFirst_to_propertyRegistration2"
+            app:destination="@id/propertyRegistration2"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationScreenZero"
+        android:name="com.suhail.travo.ui.fragments.registration.registration_screen_zero.RegistrationScreenZero"
+        android:label="fragment_registration_screen_zero"
+        tools:layout="@layout/fragment_registration_screen_zero" >
+        <action
+            android:id="@+id/action_registrationScreenZero_to_propertyRegistrationFirst"
+            app:destination="@id/propertyRegistrationFirst"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/propertyRegistration2"
+        android:name="com.suhail.travo.ui.fragments.registration.PropertyRegistration2"
+        android:label="PropertyRegistration2"
+        tools:layout="@layout/fragment_property_registration2">
+        <action
+            android:id="@+id/action_propertyRegistration2_to_propertyRegistration3"
+            app:destination="@id/propertyRegistration3"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/propertyRegistration3"
+        android:name="com.suhail.travo.ui.fragments.registration.PropertyRegistration3"
+        android:label="fragment_property_registration_3"
+        tools:layout="@layout/fragment_property_registration_3" >
+        <action
+            android:id="@+id/action_propertyRegistration3_to_propertyRegistration4"
+            app:destination="@id/propertyRegistration4"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/propertyRegistration4"
+        android:name="com.suhail.travo.ui.fragments.registration.PropertyRegistration4"
+        android:label="PropertyRegistration4"
+        tools:layout="@layout/fragment_property__registration4">
+        <action
+            android:id="@+id/action_propertyRegistration4_to_propertyRegistration5"
+            app:destination="@id/propertyRegistration5"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/propertyRegistration5"
+        android:name="com.suhail.travo.ui.fragments.registration.PropertyRegistration5"
+        android:label="PropertyRegistration5"
+        tools:layout="@layout/fragment_property_registration5">
+        <action
+            android:id="@+id/action_propertyRegistration5_to_propertyRegistration6"
+            app:destination="@id/propertyRegistration6"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/propertyRegistration6"
+        android:name="com.suhail.travo.ui.fragments.registration.PropertyRegistration6"
+        android:label="fragment_property_registration6"
+        tools:layout="@layout/fragment_property_registration6" />
+    <fragment
+        android:id="@+id/userRegistration"
+        android:name="com.suhail.travo.ui.fragments.userRegistration.UserRegistration"
+        android:label="UserRegistration"
+        tools:layout="@layout/fragment_user_registration"/>
+</navigation>

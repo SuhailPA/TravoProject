@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="user">User</string>
+    <string name="property">Property</string>
+    <string name="continue_with_phone">Continue with phone</string>
+    <string name="app_name">Travo</string>
+    <string name="mobile_number">Mobile number</string>
+    <string name="set_your_trip">SET YOUR TRIP</string>
+</resources>

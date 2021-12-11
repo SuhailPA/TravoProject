@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Travo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_we_travo">Hello! \nwe are Travo.</string>
+    <string name="create_an_account">Create an account or log into begin adventure with us.</string>
+    <string name="user">User</string>
+    <string name="property">Property</string>
+    <string name="continue_with_phone">Continue with phone</string>
+    <string name="we_are_waiting">We are waiting for you.\nSign in and start your trip with us</string>
+    <string name="mobile_number">Mobile number</string>
+    <string name="launch_screen">Book one of the Unique hotels \nto escape the ordinary</string>
+    <string name="set_your_trip">SET YOUR TRIP</string>
+
+</resources>
