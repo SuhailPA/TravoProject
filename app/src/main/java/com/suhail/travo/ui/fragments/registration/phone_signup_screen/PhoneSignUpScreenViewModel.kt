@@ -42,7 +42,6 @@ class PhoneSignUpScreenViewModel @Inject constructor(
         }
     }
 
-
     private fun handleResponceCheck(responce: Response<SignUpReturn>): Resource<SignUpReturn> {
         if (responce.isSuccessful){
             Log.i("Check","success")

@@ -59,12 +59,19 @@ class PhoneSignUpScreen : Fragment() {
 
         binding?.apply {
             continueToOtpScreen.setOnClickListener {
+                binding?.apply {
+                    animLoc.visibility = View.VISIBLE
+                    mobileNumberField.isEnabled = false
+                    continueToOtpScreen.isEnabled = false
+                }
+
                 Log.i("Clicked","true")
                 val number = mobileNumberField.text.toString().toString()
                 currentUser = if (registerAsUser.isChecked)"user"
                 else "propertyOwner"
                 val signUpDetails = SignUpDetails(currentUser,number)
                 viewModel.signUp(signUpDetails)
+
 
             }
         }
@@ -73,6 +80,11 @@ class PhoneSignUpScreen : Fragment() {
             Toast.makeText(requireContext(),it,Toast.LENGTH_SHORT).show()
         })
         viewModel._isSignUp.observe(viewLifecycleOwner, Observer {
+            binding?.apply {
+                animLoc.visibility = View.GONE
+                mobileNumberField.isEnabled = true
+                continueToOtpScreen.isEnabled = true
+            }
             if (it && currentUser == "user"){
                 val action = PhoneSignUpScreenDirections.actionPhoneSignUpScreenToOtpScreenFragment("user")
                 navController.navigate(action)

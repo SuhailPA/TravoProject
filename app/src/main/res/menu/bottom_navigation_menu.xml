@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Home"
+        android:id="@+id/home"
+        android:icon="@drawable/ic_add_post_icon"/>
+
+
+    <item
+        android:title="Status"
+        android:id="@+id/all_status"
+        android:icon="@drawable/ic_add_post_icon"/>
+
+    <item
+        android:title="Add Post"
+        android:id="@+id/add_post"
+        android:icon="@drawable/ic_add_post_icon"/>
+
+    <item
+        android:title="Notification"
+        android:id="@+id/notification"
+        android:icon="@drawable/ic_add_post_icon"/>
+
+    <item
+        android:title="profile"
+        android:id="@+id/profile"
+        android:icon="@drawable/ic_add_post_icon"/>
+
+</menu>
