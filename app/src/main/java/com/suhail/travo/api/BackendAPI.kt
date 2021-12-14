@@ -15,5 +15,4 @@ interface BackendAPI {
     @POST("api/auth/mobile_signup")
     suspend fun userRegister(@Body user : UserDetails) : Response<UserResults>
 
-
 }

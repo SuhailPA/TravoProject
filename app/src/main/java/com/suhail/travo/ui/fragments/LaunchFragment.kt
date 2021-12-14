@@ -29,6 +29,9 @@ class LaunchFragment : Fragment() {
             signUpButton.setOnClickListener {
                 navigateToRegisterScreen()
             }
+            signInButton.setOnClickListener {
+                navigateToSignInScreen()
+            }
 
         }
 
@@ -38,6 +41,11 @@ class LaunchFragment : Fragment() {
         return launchBinding.root
     }
 
+    private fun navigateToSignInScreen() {
+        var action : NavDirections = LaunchFragmentDirections.actionLoginFragmentToSignInFragment()
+        navController.navigate(action)
+
+    }
 
 
     private fun navigateToRegisterScreen(){

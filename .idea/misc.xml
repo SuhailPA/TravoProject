@@ -7,13 +7,18 @@
         <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/drawable/add_layout_background.xml" value="0.225" />
         <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/drawable/ic_facebook_icon.xml" value="0.225" />
         <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/drawable/ic_travo_icon.xml" value="0.225" />
-        <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/layout/activity_home.xml" value="0.2046875" />
+        <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/drawable/toolbar.xml" value="0.225" />
+        <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/layout/activity_home.xml" value="0.17578125" />
         <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/layout/activity_main.xml" value="0.1068840579710145" />
         <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/layout/activity_splash_screen_activtiy.xml" value="0.1068840579710145" />
+        <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/layout/fragment_add_post.xml" value="0.2046875" />
+        <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/layout/fragment_launch.xml" value="0.16799999999999998" />
         <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/layout/fragment_login.xml" value="0.2" />
+        <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/layout/fragment_notification.xml" value="0.2046875" />
         <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/layout/fragment_otp_screen.xml" value="0.16" />
-        <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/layout/fragment_phone_sign_up_screen.xml" value="0.1" />
+        <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/layout/fragment_phone_sign_up_screen.xml" value="0.2" />
+        <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/layout/fragment_profile.xml" value="0.2046875" />
         <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/layout/fragment_property__registration4.xml" value="0.176" />
         <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/layout/fragment_property__room1.xml" value="0.15185185185185185" />
         <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/layout/fragment_property_registration2.xml" value="0.176" />
@@ -23,11 +28,15 @@
         <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/layout/fragment_property_registration_3.xml" value="0.2046875" />
         <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/layout/fragment_property_room1.xml" value="0.2" />
         <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/layout/fragment_registration_screen_zero.xml" value="0.264" />
+        <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/layout/fragment_sign_in.xml" value="0.16799999999999998" />
+        <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/layout/fragment_status.xml" value="0.2046875" />
         <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/layout/fragment_user_registration.xml" value="0.1" />
         <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/layout/list_item.xml" value="0.2046875" />
         <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/layout/main_activity.xml" value="0.17604166666666668" />
         <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/layout/registration_screen_fragment.xml" value="0.2046875" />
+        <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/layout/toolbar.xml" value="0.2046875" />
         <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.4" />
+        <entry key="..\:/Kotlin_Projects/First project/Travo/app/src/main/res/menu/main_menu.xml" value="0.2046875" />
       </map>
     </option>
   </component>

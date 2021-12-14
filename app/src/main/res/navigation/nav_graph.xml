@@ -17,6 +17,13 @@
             app:exitAnim="@anim/to_up"
             app:popEnterAnim="@anim/from_up"
             app:popExitAnim="@anim/to_down" />
+        <action
+            android:id="@+id/action_loginFragment_to_signInFragment"
+            app:destination="@id/signInFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
     </fragment>
     <fragment
         android:id="@+id/phoneSignUpScreen"
@@ -142,4 +149,9 @@
         android:name="com.suhail.travo.ui.fragments.userRegistration.UserRegistration"
         android:label="UserRegistration"
         tools:layout="@layout/fragment_user_registration"/>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.suhail.travo.ui.fragments.SignInFragment"
+        android:label="SignInFragment"
+        tools:layout="@layout/fragment_sign_in"/>
 </navigation>

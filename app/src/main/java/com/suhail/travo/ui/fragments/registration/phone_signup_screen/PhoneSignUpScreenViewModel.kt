@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.suhail.travo.data.SignUpDetails
 import com.suhail.travo.data.SignUpReturn
-import com.suhail.travo.data.User
 import com.suhail.travo.data.UserDetails
 import com.suhail.travo.repositories.RepositoryClass
 import com.suhail.travo.util.Resource
@@ -26,6 +25,7 @@ class PhoneSignUpScreenViewModel @Inject constructor(
 
     var phoneNumber:MutableLiveData<String> = MutableLiveData()
     private var signUpResult : MutableLiveData<Resource<SignUpReturn>> = MutableLiveData()
+    val exception = MutableLiveData<String>()
     val _signUpResult : LiveData<Resource<SignUpReturn>>
         get() = signUpResult
     private var isSignUp : MutableLiveData<Boolean> = MutableLiveData()
@@ -36,10 +36,18 @@ class PhoneSignUpScreenViewModel @Inject constructor(
 
     fun signUp(signUpDetails: SignUpDetails){
         viewModelScope.launch {
-            val result = repositoryClass.userSignIn(signUpDetails)
-            signUpResult.value = handleResponceCheck(result)
-
+            try {
+                val result = repositoryClass.userSignIn(signUpDetails)
+                signUpResult.value = handleResponceCheck(result)
+            }catch (e:Exception){
+                exception.value = e.toString()
+            }
         }
+    }
+
+    fun resetValues(){
+        val data = SignUpReturn("",null)
+        signUpResult.value = Resource.Success(data)
     }
 
     private fun handleResponceCheck(responce: Response<SignUpReturn>): Resource<SignUpReturn> {
@@ -48,12 +56,15 @@ class PhoneSignUpScreenViewModel @Inject constructor(
             if (responce.code() == 200){
                 responce.body()?.let { resultResponce ->
                     isSignUp.value = true
-                    val user = UserDetails(null,null,null,null,
-                        responce.body()!!.user!!.id)
+                    val user = responce.body()!!.id?.let {
+                        UserDetails(mobile = phoneNumber.value, userId = it)
+                    }
                     viewModelScope.launch {
-                        repositoryClass.userDataStore(user)
+                        if (user != null) {
+                            repositoryClass.userDataStore(user)
+                        }
                         withContext(Dispatchers.Main){
-                            Log.i("userIDdatabase","success ${responce.body()!!.user!!.id}")
+                            Log.i("userIDdatabase","success ${responce.body()!!.id}")
                         }
                     }
                     return Resource.Success(resultResponce)

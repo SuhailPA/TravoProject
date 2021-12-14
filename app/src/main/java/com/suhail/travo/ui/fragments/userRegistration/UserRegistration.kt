@@ -15,8 +15,7 @@ import androidx.navigation.NavController
 import com.suhail.travo.R
 import com.suhail.travo.data.UserDetails
 import com.suhail.travo.databinding.FragmentUserRegistrationBinding
-import com.suhail.travo.ui.homeScreen.HomeActivity
-import com.suhail.travo.ui.homeScreen.HomeFragment
+import com.suhail.travo.ui.HomeActivity
 import com.suhail.travo.util.Resource
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -106,22 +105,20 @@ class UserRegistration : Fragment() {
 
         binding.userSubmit.setOnClickListener {
             val userDet = UserDetails(viewModel.userName.value,viewModel.name_.value,viewModel.email.value,
-                viewModel.password.value,viewModel.userId.value!!)
+                viewModel.password.value,viewModel.mobileNumber.value,null,null,null,viewModel.userId.value!!)
             Log.i("userIdvalue",viewModel.userId.value!!)
-            viewModel.updateUserInfo(userDet)
             viewModel.registerAsUser(userDet)
             viewModel.profileDetails.observe(viewLifecycleOwner, Observer { it ->
                 when(it){
                     is Resource.Success ->{
                         it.data.let {
-                            val intent = Intent(requireContext(),HomeActivity::class.java)
+                            val intent = Intent(requireContext(), HomeActivity::class.java)
                             startActivity(intent)
                         }
                     }
                     is Resource.Error ->{
                         it.error.let { msg->
                             Toast.makeText(requireContext(),msg,Toast.LENGTH_SHORT).show()
-
                         }
                     }
                 }

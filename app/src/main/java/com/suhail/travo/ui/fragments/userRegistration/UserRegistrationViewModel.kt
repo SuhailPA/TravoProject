@@ -4,16 +4,12 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.suhail.travo.data.SignUpReturn
-import com.suhail.travo.data.User
 import com.suhail.travo.data.UserDetails
 import com.suhail.travo.data.UserResults
 import com.suhail.travo.repositories.RepositoryClass
 import com.suhail.travo.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import retrofit2.Response
 import javax.inject.Inject
 
@@ -28,6 +24,7 @@ class UserRegistrationViewModel @Inject constructor(
     var confirmPassword = MutableLiveData<String>()
     var profileDetails = MutableLiveData<Resource<UserResults>>()
     var isAllValid = MutableLiveData<Boolean>(false)
+    val exception = MutableLiveData<String>()
 
     var isUserName : Boolean = false
     var isName : Boolean = false
@@ -36,6 +33,9 @@ class UserRegistrationViewModel @Inject constructor(
     var isConPassword : Boolean = false
 
     val userId = MutableLiveData<String>()
+    private val userInfo = MutableLiveData<UserDetails>()
+
+    val mobileNumber = MutableLiveData<String>()
 
     init {
         readUserID()
@@ -43,11 +43,19 @@ class UserRegistrationViewModel @Inject constructor(
 
     fun registerAsUser(user: UserDetails){
         viewModelScope.launch {
-            var results = repositoryClass.getUserRegisterDetails(user)
-            Log.i("successs",results.code().toString())
-            Log.i("successs",user.userId)
-            profileDetails.postValue(handleResponceCheck(results))
-            Log.i("successs","tessst")
+            try {
+                var results = repositoryClass.getUserRegisterDetails(user)
+
+               profileDetails.postValue(handleResponceCheck(results))
+                updateUserInfo(
+                    UserDetails(user.user_name,user.name,user.email,user.password,user.mobile,
+                results.body()?.token,results.body()?.user?.following?.size,results.body()?.user?.followers?.size,
+                    user.userId)
+                )
+            }catch (e:Exception){
+                exception.value = e.toString()
+            }
+
         }
     }
 
@@ -57,10 +65,11 @@ class UserRegistrationViewModel @Inject constructor(
                 isConPassword)
     }
 
-    fun readUserID(){
+    private fun readUserID(){
         viewModelScope.launch {
-           userId.value = repositoryClass.getUserId()
-            Log.i("userIDuser",repositoryClass.getUserId())
+           userInfo.value = repositoryClass.getUserId()
+            userId.value = userInfo.value!!.userId
+            mobileNumber.value = userInfo.value?.mobile!!
         }
     }
 
@@ -81,9 +90,10 @@ class UserRegistrationViewModel @Inject constructor(
                 responce.body()?.let { resultResponce ->
                     return Resource.Success(resultResponce)
                 }
-            }else{
+            }
+            else{
                 responce.body()?.let { resultResponce ->
-
+                    return Resource.Error(resultResponce.message!!)
                 }
             }
         }else{

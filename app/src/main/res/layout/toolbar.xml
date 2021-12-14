@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.MaterialToolbar
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:id="@+id/toolBar"
+    app:titleTextColor="@color/black"
+    android:layout_alignParentTop="true"
+    app:layout_scrollFlags="scroll|enterAlways"
+    app:title="Travo"
+    app:menu="@menu/main_menu"
+    android:background="#C9FBFF"
+    android:elevation="0dp"
+    app:elevation="0dp">
+
+</com.google.android.material.appbar.MaterialToolbar>

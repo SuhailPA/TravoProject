@@ -6,6 +6,6 @@ import com.google.gson.annotations.SerializedName
 data class SignUpReturn(
     @SerializedName("message")
     val message: String,
-    @SerializedName("user")
-    val user: User?
+    @SerializedName("_id")
+    val id : String?
 )

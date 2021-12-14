@@ -22,8 +22,8 @@ class RepositoryClass @Inject constructor(
         database.travoDao().udatedData(user.name!!,user.user_name!!,user.email!!,user.password!!)
     }
 
-    suspend fun getUserId() : String{
-        return database.travoDao().getUserId()
+    suspend fun getUserId() : UserDetails{
+        return database.travoDao().getUserInfo()
     }
 
     suspend fun getUserRegisterDetails(user:UserDetails):Response<UserResults>{

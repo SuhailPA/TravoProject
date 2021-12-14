@@ -4,28 +4,28 @@
 
     <item
         android:title="Home"
-        android:id="@+id/home"
-        android:icon="@drawable/ic_add_post_icon"/>
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/home_icon"/>
 
 
     <item
         android:title="Status"
-        android:id="@+id/all_status"
-        android:icon="@drawable/ic_add_post_icon"/>
+        android:id="@+id/statusFragment"
+        android:icon="@drawable/alll_status_icon"/>
 
     <item
         android:title="Add Post"
-        android:id="@+id/add_post"
-        android:icon="@drawable/ic_add_post_icon"/>
+        android:id="@+id/addPostFragment"
+        android:icon="@drawable/add_post_icon"/>
 
     <item
         android:title="Notification"
-        android:id="@+id/notification"
-        android:icon="@drawable/ic_add_post_icon"/>
+        android:id="@+id/notificationFragment"
+        android:icon="@drawable/notification_icon"/>
 
     <item
         android:title="profile"
-        android:id="@+id/profile"
-        android:icon="@drawable/ic_add_post_icon"/>
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/profie_icon"/>
 
 </menu>
