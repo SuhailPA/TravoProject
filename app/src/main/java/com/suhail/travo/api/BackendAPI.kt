@@ -1,6 +1,7 @@
 package com.suhail.travo.api
 
 import com.suhail.travo.data.*
+import com.suhail.travo.data.requestData.SignUpDetails
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.POST
@@ -13,6 +14,6 @@ interface BackendAPI {
     suspend fun userSignUpOtp(@Body signUpDetails : SignUpDetails):Response<SignUpReturn>
 
     @POST("api/auth/mobile_signup")
-    suspend fun userRegister(@Body user : UserDetails) : Response<UserResults>
+    suspend fun userRegister(@Body user : UserRegistrationData) : Response<UserResults>
 
 }

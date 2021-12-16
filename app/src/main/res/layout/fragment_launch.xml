@@ -8,7 +8,7 @@
     android:id="@+id/login_scroll_view"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".ui.fragments.LaunchFragment">
+    tools:context=".ui.fragments.registration.launchFragment.LaunchFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

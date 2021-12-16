@@ -27,7 +27,7 @@
         tools:layout="@layout/fragment_notification" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.suhail.travo.ui.homeScreen.ProfileFragment"
+        android:name="com.suhail.travo.ui.homeScreen.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

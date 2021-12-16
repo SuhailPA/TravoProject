@@ -1,21 +1,26 @@
 package com.suhail.travo.ui.fragments.userRegistration
 
+import android.content.SharedPreferences
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.suhail.travo.data.UserDetails
+import com.suhail.travo.data.UserRegistrationData
 import com.suhail.travo.data.UserResults
 import com.suhail.travo.repositories.RepositoryClass
 import com.suhail.travo.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import retrofit2.Response
 import javax.inject.Inject
 
 @HiltViewModel
 class UserRegistrationViewModel @Inject constructor(
-    private val repositoryClass: RepositoryClass
+    private val repositoryClass: RepositoryClass,
+    private val sharedPreferences: SharedPreferences
 ) : ViewModel() {
     var userName = MutableLiveData<String>()
     var name_ = MutableLiveData<String>()
@@ -41,14 +46,20 @@ class UserRegistrationViewModel @Inject constructor(
         readUserID()
     }
 
-    fun registerAsUser(user: UserDetails){
+
+    fun saveUserInfo(token:String){
+        sharedPreferences.edit().putBoolean("isLoggedIn", true).apply()
+        sharedPreferences.edit().putString("token",token)
+    }
+    fun registerAsUser(user: UserRegistrationData){
         viewModelScope.launch {
             try {
+                Log.i("userDetails","${user.userName},${user.userId}")
                 var results = repositoryClass.getUserRegisterDetails(user)
 
                profileDetails.postValue(handleResponceCheck(results))
                 updateUserInfo(
-                    UserDetails(user.user_name,user.name,user.email,user.password,user.mobile,
+                    UserDetails(user.userName,user.name,user.email,user.password,results.body()?.user?.mobileNumber,
                 results.body()?.token,results.body()?.user?.following?.size,results.body()?.user?.followers?.size,
                     user.userId)
                 )
@@ -73,11 +84,14 @@ class UserRegistrationViewModel @Inject constructor(
         }
     }
 
-    fun updateUserInfo(user: UserDetails){
+    private fun updateUserInfo(user: UserDetails){
         if(isAllValid.value == true){
             Log.i("checkUser","${user.userId} ||${user.user_name}")
             viewModelScope.launch {
                 repositoryClass.userDataUpdate(user)
+                withContext(Dispatchers.Main){
+
+                }
             }
 
         }

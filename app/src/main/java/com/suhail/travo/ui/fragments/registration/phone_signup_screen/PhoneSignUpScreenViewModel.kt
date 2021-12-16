@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.suhail.travo.data.SignUpDetails
+import com.suhail.travo.data.requestData.SignUpDetails
 import com.suhail.travo.data.SignUpReturn
 import com.suhail.travo.data.UserDetails
 import com.suhail.travo.repositories.RepositoryClass

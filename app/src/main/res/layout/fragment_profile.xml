@@ -1,15 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.homeScreen.ProfileFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+        <variable
+            name="profileViewModel"
+            type="com.suhail.travo.ui.homeScreen.profile.ProfileViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Profile Fragment"
-        android:gravity="center"/>
+        android:background="#C9FBFF"
+        tools:context=".ui.homeScreen.profile.ProfileFragment">
 
-</FrameLayout>
+
+        <ImageView
+            android:id="@+id/user_profile_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/user_name_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="@{String.valueOf(profileViewModel.userDetails_.user_name)}"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_profile_pic" />
+
+        <TextView
+            android:id="@+id/followers_no_profile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="@{String.valueOf(profileViewModel.userDetails_.followersNo)}"
+            app:layout_constraintEnd_toStartOf="@+id/following_no_profile"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/post_no_profile"
+            app:layout_constraintTop_toBottomOf="@+id/user_name_profile" />
+
+        <TextView
+            android:id="@+id/post_no_profile"
+            android:layout_width="0dp"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="28 posts"
+            app:layout_constraintBaseline_toBaselineOf="@+id/followers_no_profile"
+            app:layout_constraintEnd_toStartOf="@+id/followers_no_profile"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/following_no_profile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@{String.valueOf(profileViewModel.userDetails_.followingNo)}"
+            android:textAlignment="center"
+            app:layout_constraintBaseline_toBaselineOf="@+id/followers_no_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/followers_no_profile" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

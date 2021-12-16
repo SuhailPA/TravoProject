@@ -14,6 +14,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import com.suhail.travo.R
 import com.suhail.travo.data.UserDetails
+import com.suhail.travo.data.UserRegistrationData
 import com.suhail.travo.databinding.FragmentUserRegistrationBinding
 import com.suhail.travo.ui.HomeActivity
 import com.suhail.travo.util.Resource
@@ -104,16 +105,27 @@ class UserRegistration : Fragment() {
         })
 
         binding.userSubmit.setOnClickListener {
-            val userDet = UserDetails(viewModel.userName.value,viewModel.name_.value,viewModel.email.value,
-                viewModel.password.value,viewModel.mobileNumber.value,null,null,null,viewModel.userId.value!!)
+            val userDet = viewModel.userName.value?.let { it1 ->
+                viewModel.name_.value?.let { it2 ->
+                    viewModel.password.value?.let { it3 ->
+                        viewModel.email.value?.let { it4 ->
+                            UserRegistrationData(userName = it1, name = it2, email = it4,
+                                password = it3, userId = viewModel.userId.value!!)
+                        }
+                    }
+                }
+            }
             Log.i("userIdvalue",viewModel.userId.value!!)
-            viewModel.registerAsUser(userDet)
+            if (userDet != null) {
+                viewModel.registerAsUser(userDet)
+            }
             viewModel.profileDetails.observe(viewLifecycleOwner, Observer { it ->
                 when(it){
                     is Resource.Success ->{
                         it.data.let {
                             val intent = Intent(requireContext(), HomeActivity::class.java)
                             startActivity(intent)
+                            viewModel.saveUserInfo(it?.token!!)
                         }
                     }
                     is Resource.Error ->{
