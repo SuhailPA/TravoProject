@@ -1,4 +1,4 @@
-package com.suhail.travo.data
+package com.suhail.travo.data.responceData
 
 
 import com.google.gson.annotations.SerializedName
@@ -15,5 +15,7 @@ data class User(
     @SerializedName("name")
     val name: String,
     @SerializedName("user_name")
-    val userName: String
+    val userName: String,
+    @SerializedName("_id")
+    val userId : String ?= null
 )

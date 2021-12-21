@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/otpScreenFragment"
-        android:name="com.suhail.travo.ui.fragments.registration.OtpScreenFragment"
+        android:name="com.suhail.travo.ui.fragments.registration.otpSignUpValidation.OtpScreenFragment"
         android:label="fragment_otp_screen"
         tools:layout="@layout/fragment_otp_screen" >
         <action
@@ -59,6 +59,9 @@
             app:popExitAnim="@anim/to_right" />
         <argument
             android:name="user"
+            app:argType="string" />
+        <argument
+            android:name="mobileNumber"
             app:argType="string" />
     </fragment>
     <fragment
@@ -151,7 +154,7 @@
         tools:layout="@layout/fragment_user_registration"/>
     <fragment
         android:id="@+id/signInFragment"
-        android:name="com.suhail.travo.ui.fragments.SignInFragment"
+        android:name="com.suhail.travo.ui.fragments.signInScreen.SignInFragment"
         android:label="SignInFragment"
         tools:layout="@layout/fragment_sign_in"/>
 </navigation>

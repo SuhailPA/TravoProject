@@ -1,4 +1,4 @@
-package com.suhail.travo.data
+package com.suhail.travo.data.requestData
 
 
 import com.google.gson.annotations.SerializedName

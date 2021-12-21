@@ -24,8 +24,10 @@ class ProfileFragment : Fragment() {
         binding = FragmentProfileBinding.inflate(layoutInflater,container,false)
         // Inflate the layout for this fragment
 
+        binding.lifecycleOwner = viewLifecycleOwner
+        binding.profileViewModel = viewModel
         viewModel.userDetails_.observe(viewLifecycleOwner, Observer {
-            Log.i("userDetails87678",it.user_name.toString())
+            Log.i("userDetails87678",it.user_name!!)
         })
         return binding.root
     }

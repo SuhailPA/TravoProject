@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/otp_varification_background"
-    tools:context=".ui.fragments.registration.OtpScreenFragment">
+    tools:context=".ui.fragments.registration.otpSignUpValidation.OtpScreenFragment">
 
 
     <TextView
@@ -44,11 +44,9 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:itemBackground="@color/white"
-        android:padding="10dp"
         android:textColor="@android:color/black"
         app:OtpItemCount="4"
         app:OtpLineColor="@color/black"
-        app:OtpViewType="none"
         app:layout_constraintBottom_toTopOf="@+id/submit_otp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

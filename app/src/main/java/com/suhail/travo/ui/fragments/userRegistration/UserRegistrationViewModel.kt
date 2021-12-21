@@ -6,8 +6,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.suhail.travo.data.UserDetails
-import com.suhail.travo.data.UserRegistrationData
-import com.suhail.travo.data.UserResults
+import com.suhail.travo.data.requestData.UserRegistrationData
+import com.suhail.travo.data.responceData.UserResults
 import com.suhail.travo.repositories.RepositoryClass
 import com.suhail.travo.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -107,13 +107,15 @@ class UserRegistrationViewModel @Inject constructor(
             }
             else{
                 responce.body()?.let { resultResponce ->
-                    return Resource.Error(resultResponce.message!!)
+                    Log.i("logMessage",resultResponce.message.toString())
+                    return Resource.Error(error = resultResponce.message!!.toString())
+
                 }
             }
         }else{
             Log.i("Check1","failure")
         }
-        return Resource.Error(responce.message())
+        return Resource.Error(error = responce.message())
 
     }
 }

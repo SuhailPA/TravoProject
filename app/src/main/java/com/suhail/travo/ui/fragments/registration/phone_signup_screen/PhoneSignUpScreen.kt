@@ -92,8 +92,14 @@ class PhoneSignUpScreen : Fragment() {
                 continueToOtpScreen.isEnabled = true
             }
             if (it && currentUser == "user"){
-                val action = PhoneSignUpScreenDirections.actionPhoneSignUpScreenToOtpScreenFragment("user")
-                navController.navigate(action)
+                val action = viewModel.phoneNumber.value?.let { it1 ->
+                    PhoneSignUpScreenDirections.actionPhoneSignUpScreenToOtpScreenFragment("user",
+                        it1
+                    )
+                }
+                if (action != null) {
+                    navController.navigate(action)
+                }
                 viewModel.resetValues()
             }
         })

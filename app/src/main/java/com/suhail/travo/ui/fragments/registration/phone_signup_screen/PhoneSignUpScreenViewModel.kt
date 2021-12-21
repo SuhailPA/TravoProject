@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.suhail.travo.data.requestData.SignUpDetails
-import com.suhail.travo.data.SignUpReturn
+import com.suhail.travo.data.responceData.SignUpReturn
 import com.suhail.travo.data.UserDetails
 import com.suhail.travo.repositories.RepositoryClass
 import com.suhail.travo.util.Resource
@@ -72,13 +72,13 @@ class PhoneSignUpScreenViewModel @Inject constructor(
             }else{
                     responce.body()?.let { resultResponce ->
                         isSignUp.value = false
-                        return Resource.Error(resultResponce.message)
+                        return Resource.Error(error=resultResponce.message)
                     }
                 }
         }else{
             Log.i("Check","failure")
         }
-        return Resource.Error(responce.message())
+        return Resource.Error(error=responce.message())
 
     }
 

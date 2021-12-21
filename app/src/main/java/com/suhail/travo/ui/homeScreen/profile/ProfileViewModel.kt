@@ -20,13 +20,20 @@ class ProfileViewModel @Inject constructor(
     private var userDetails = MutableLiveData<UserDetails>()
     val userDetails_ : LiveData<UserDetails>
             get() = userDetails
+      private var userNameProfile = MutableLiveData<String>()
+    val userNameProfile_ : LiveData<String>
+    get() = userNameProfile
     init {
         dataSetToProfileScreen()
     }
-    fun dataSetToProfileScreen(){
+    private fun dataSetToProfileScreen(){
         viewModelScope.launch {
-             userDetails.value= database.travoDao().getUserInfo()
+             userDetails.value = database.travoDao().getUserInfo()
             Log.i("userDetails87678",userDetails.value!!.user_name!!)
+            withContext(Dispatchers.Main){
+                userNameProfile.value = userDetails.value!!.user_name!!
+                Log.i("userName",userNameProfile.value.toString())
+            }
         }
 
     }

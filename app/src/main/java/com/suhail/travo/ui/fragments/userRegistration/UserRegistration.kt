@@ -13,8 +13,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import com.suhail.travo.R
-import com.suhail.travo.data.UserDetails
-import com.suhail.travo.data.UserRegistrationData
+import com.suhail.travo.data.requestData.UserRegistrationData
 import com.suhail.travo.databinding.FragmentUserRegistrationBinding
 import com.suhail.travo.ui.HomeActivity
 import com.suhail.travo.util.Resource

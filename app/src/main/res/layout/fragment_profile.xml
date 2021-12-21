@@ -25,6 +25,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/small_logo"
             tools:src="@tools:sample/avatars" />
 
         <TextView
@@ -33,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:gravity="center"
-            android:text="@{String.valueOf(profileViewModel.userDetails_.user_name)}"
+            android:text='@{profileViewModel.userNameProfile_ != null ? profileViewModel.userNameProfile_:""}'
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
